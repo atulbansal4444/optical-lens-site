@@ -1,40 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
 	AppBar,
-	Avatar,
 	Container,
 	Toolbar,
 	Typography,
 	Box,
-	Button,
-	Tooltip,
-	Menu,
-	MenuItem,
-	IconButton,
+	Button
 } from '@mui/material';
+import LoginComponent from '../LoginComponent.jsx';
 
 const AppBarComponent = () => {
-	const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 	const pages = ['Products', 'Pricing'];
 
-	const [anchorElUser, setAnchorElUser] = useState(null);
-
-	const handleOpenUserMenu = (event) => {
-		setAnchorElUser(event.currentTarget);
-	};
-
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
-	};
-
 	return (
-		<AppBar position="static">
-			<Container maxWidth="xl">
+		<AppBar position='static'>
+			<Container maxWidth='xl'>
+				<i className='fa fa-gamepad fa-lg' aria-hidden='true'></i>
 				<Toolbar disableGutters>
 					<Typography
-						variant="h6"
+						variant='h6'
 						noWrap
-						component="a"
+						component='a'
 						sx={{
 							mr: 2,
 							display: { xs: 'none', md: 'flex' },
@@ -43,47 +29,20 @@ const AppBarComponent = () => {
 							letterSpacing: '.2rem',
 							color: 'inherit',
 							textDecoration: 'none',
-						}}
-					>
-            PALAK OPTICALS
+						}}>
+						{'PALAK OPTICALS'}
 					</Typography>
-
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-						{pages.map((page) => (
-							<Button
-								key={page}
-								sx={{ my: 2, color: 'white', display: 'block' }}
-							>
-								{page}
-							</Button>
-						))}
+						{
+							pages.map(page => (
+								<Button key={page} sx={{ my: 2, color: 'white', display: 'block' }}>
+									{page}
+								</Button>
+							))
+						}
 					</Box>
-
 					<Box sx={{ flexGrow: 0 }}>
-						<Tooltip title="Open settings">
-							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-							</IconButton>
-						</Tooltip>
-						<Menu
-							sx={{ mt: '45px' }}
-							id="menu-appbar"
-							anchorEl={anchorElUser}
-							anchorOrigin={{
-								vertical: 'top',
-								horizontal: 'right',
-							}}
-							keepMounted
-							transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-							open={Boolean(anchorElUser)}
-							onClose={handleCloseUserMenu}
-						>
-							{settings.map((setting) => (
-								<MenuItem key={setting} onClick={handleCloseUserMenu}>
-									<Typography textAlign="center">{setting}</Typography>
-								</MenuItem>
-							))}
-						</Menu>
+						<LoginComponent />
 					</Box>
 				</Toolbar>
 			</Container>

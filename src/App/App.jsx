@@ -1,5 +1,5 @@
 import React from 'react';
-import AppBarComponent from '../components/AppBar/AppBarComponent';
+import AppBarComponent from './../components/AppBar/AppBarComponent.jsx';
 
 const App = () => {
 	return (
