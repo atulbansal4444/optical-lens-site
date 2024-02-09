@@ -23,7 +23,8 @@ module.exports = {
 	plugins: ['react'],
 	rules: {
 		'no-console': 'error',
-		quotes: ['error', 'single'],
+		'quotes': ['error', 'single'],
+		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
 		'indent': [
 			'error', 'tab'
 		]
