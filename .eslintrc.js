@@ -23,6 +23,17 @@ module.exports = {
 	plugins: ['react'],
 	rules: {
 		'no-console': 'error',
+		'react/jsx-uses-react': 'error',
+		'react/jsx-uses-vars': 'error',
+		'react/prop-types': 'error',
+		'space-before-function-paren': [
+			'error',
+			{
+				'anonymous': 'never',
+				'named': 'never',
+				'asyncArrow': 'always'
+			}
+		],
 		'quotes': ['error', 'single'],
 		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
 		'indent': [

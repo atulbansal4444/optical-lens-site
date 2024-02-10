@@ -5,9 +5,9 @@ import {
 	Toolbar,
 	Typography,
 	Box,
-	Button,
+	Button
 } from '@mui/material';
-import LoginComponent from '../LoginComponent';
+import LoginComponent from '../LoginComponent.jsx';
 
 const AppBarComponent = () => {
 	const pages = ['Products', 'Pricing'];
@@ -15,6 +15,7 @@ const AppBarComponent = () => {
 	return (
 		<AppBar position='static'>
 			<Container maxWidth='xl'>
+				<i className='fa fa-gamepad fa-lg' aria-hidden='true'></i>
 				<Toolbar disableGutters>
 					<Typography
 						variant='h6'
